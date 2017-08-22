@@ -2,7 +2,7 @@
   "name": "mood-bubbles",
   "version": "0.1.0",
   "description": "A site such as twiter but where users can create mood bubbles which are taken and stored then can be viewed as a whole in a number of ways. People can say their feelings and then see create a bubble. User can then view everyones moods in a dynamic interacive way. Are people really happy today well their will be alot of green bubbles. Is there alot of anger then lots of red and so on. Poeple cna seen look at single users or just pick a bubble at random.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +16,8 @@
     "react-draggable": "^3.0.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0"
   }
