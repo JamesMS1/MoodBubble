@@ -8,6 +8,24 @@ module.exports = class MainPage extends React.Component
 {
 	constructor(props) {
 		super( props );	
+		
+		this.state = {
+			objectListTests: 
+			[
+				{top:100, left:50, deltaTop:11, deltaRight:80, delay:100},
+				{top:20, left:10, deltaTop:10, deltaRight:16, delay:200},
+				{top:15, left:0, deltaTop:-5, deltaRight:30, delay:400},
+				{top:30, left:50, deltaTop:30, deltaRight:6, delay:150},
+			]
+		}
+	}
+	
+	insertTest(objectTemp) {
+		this.uniqueID = this.uniqueID || 0;
+		this.uniqueID++;
+		return (
+				<Test key={this.uniqueID} id={this.uniqueID} lala={objectTemp}/>
+			)
 	}
 	
 	render() {
@@ -21,7 +39,7 @@ module.exports = class MainPage extends React.Component
 					
 						<div className="topDivClass" id="topDiv">
 							<h1>Hello World!</h1>
-							<Test />
+						{ this.state.objectListTests.map( (objectTemp) => this.insertTest(objectTemp) ) }
 						</div>
 						<script src='/js/bundle.js' />
 					</body>
