@@ -1,16 +1,16 @@
-var React = require('react');
-var  Draggable = require('react-draggable');
+import React from 'react';
+import  Draggable from 'react-draggable';
 //import React, { Component } from 'react'; // : ( not working with this babel look back into
 
-
-module.exports = class Test extends React.Component
+module.exports =class Test extends React.Component
 {
 	constructor(props) {
 		super( props );	
 		
 		console.log( this.props.lala );
 		
-		var tempState = {};
+		var tempState = {
+		};
 		tempState.top = this.props["lala"]["top"];
 		tempState.left = this.props["lala"]["left"];
 		tempState.position = "absolute";
@@ -21,22 +21,22 @@ module.exports = class Test extends React.Component
 		this.delay = this.props["lala"]["delay"];
 		
 		this.state = tempState;
+		
+		this.initialRender = true;
+		
 	}
 	
 	stopPockingMe(e) {
-		//e.stopPropagation();
-		console.log( this.state)
-		alert("Owch!");	
+		e.stopPropagation();
+		clearInterval( this.interval );
 	}
 	
-	componentWillUnmount() {
-		//this.interval = setInterval(() => { }, 1000);
-		//this.setState( {top:400} );
+	componentDidMount() {
+		this.activate();
   	}
 	
-	componentDidMount() {
-		
-    	this.interval = setInterval(() => {
+	activate() { 
+			this.interval = setInterval(() => {
 			var topDelt = {};
 			topDelt["top"] = this.state.top+this.deltaTop;
 			var rightDelt = {};
@@ -55,10 +55,15 @@ module.exports = class Test extends React.Component
 			this.setState( topDelt );
 			this.setState( rightDelt );
 		}, this.delay);
-  	}
+	}
 	
 	render() 
 	{
+		
+/*		if( this.initialRender ) {
+			this.initialRender = false;	
+			this.activate();
+		}*/
 		return ( 
 				<Draggable>
 					<div className="testDivClass" style={this.state} >

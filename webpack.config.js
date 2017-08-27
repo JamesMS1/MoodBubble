@@ -3,17 +3,17 @@ var path = require('path');
 module.exports = {
 	entry: './client.js',
 	output: {
-		filename: 'bundle.js',
+		filename: 'build.js',
 		path: path.resolve( './public/js/' )
 	},
 	module: {
 		loaders: [
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 				query: {
-					presets: ['react']
+					presets: ['es2015','react']
 				}
 			}
 		]
