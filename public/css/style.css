@@ -1,6 +1,7 @@
 body {
 		padding: 50px;
 		font: 14px "Lucida Grade", Helvetica, Arial;
+		background-color:aliceblue;
 }
 
 h1 {
@@ -11,4 +12,34 @@ h1 {
 
 	border: 5px solid blue;
 	display: inline-block;
+}
+
+.Moving {
+		border-radius: 100%;
+	width: 80px;
+	height: 80px;
+}
+
+.bubbles {	
+	border-radius: 100%;
+	width: 80px;
+	height: 80px;
+	/*border: 3px solid blue;*/
+	text-align: center;
+	background-color: palegreen;
+}
+
+.movingButton {
+	background-color: palegreen;
+	color: green;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+	font-size: 16px;
+}
+
+img {
+	border-radius: 100%;
+	opacity: 0.5;
 }
